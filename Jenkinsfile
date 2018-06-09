@@ -13,7 +13,7 @@ node {
   sh("docker run ${imageTag} go test")
 
   stage 'Push image to registry'
-  sh("gcloud docker -- push ${imageTag}")
+  sh("/google/google-cloud-sdk/bin/gcloud docker -- push ${imageTag}")
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
