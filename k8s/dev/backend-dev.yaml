@@ -41,4 +41,4 @@ spec:
         command: ["sh", "-c", "app -port=8080"]
         ports:
         - name: backend
-          containerPort: 8080
+          containerPort: 8081
