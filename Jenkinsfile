@@ -34,7 +34,6 @@ node {
         sh("kubectl --namespace=production apply -f k8s/production/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         break
-
     // Roll out a dev environment
     default:
         // Create namespace if it doesn't exist
